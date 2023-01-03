@@ -6,10 +6,12 @@
 
 - [x] Tailwindcss
 - [x] Eslint
+  - [x] Sort Order
+  - [x] Default Lint
 - [x] Prettier
 - [x] Issue & PR Templates
 - [x] Darkmode (`next-themes`)
-- [ ] Husky
+- [x] Husky
 - [ ] Cypress
 
 ## Additional
