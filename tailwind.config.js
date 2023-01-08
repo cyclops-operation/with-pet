@@ -9,6 +9,9 @@ module.exports = {
     extend: {
       padding: {
         4.5: '1.125rem'
+      },
+      dropShadow: {
+        default: '0px 1px 2px rgba(16, 24, 40, 0.05)'
       }
     }
   },

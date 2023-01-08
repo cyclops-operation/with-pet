@@ -60,6 +60,7 @@ const Button = ({
   width = 'hug',
   color = 'primary',
   size = 'sm',
+  type = 'button',
   ...rest
 }: ButtonProps) => {
   return (
