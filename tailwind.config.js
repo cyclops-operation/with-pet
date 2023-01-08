@@ -6,7 +6,11 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      padding: {
+        4.5: '1.125rem'
+      }
+    }
   },
   plugins: []
 }

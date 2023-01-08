@@ -25,7 +25,9 @@
       "~/states/*": ["states/*"],
       "~/interfaces/*": ["interfaces/*"],
       "~/lib/*": ["lib/*"],
-      "~/utils/*": ["utils/*"]
+      "~/utils/*": ["utils/*"],
+      "~/common/*": ["common/*"],
+      "tailwindcss-classnames": ["common/custom-styles.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

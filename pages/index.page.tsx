@@ -1,14 +1,11 @@
-import { useTheme } from 'next-themes'
-import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
+import Button from '~/components/Button'
 
 export default function Home() {
-  const { theme, setTheme } = useTheme()
-  console.log(theme)
-
   return (
     <>
-      <SunIcon className='w-12' onClick={() => setTheme('light')} />
-      <MoonIcon className='w-12' onClick={() => setTheme('dark')} />
+      <Button color='secondary' disabled>
+        Button CTA
+      </Button>
     </>
   )
 }
