@@ -13,6 +13,8 @@ export const Default: ComponentStory<typeof Label> = (props: LabelProps) => (
   <Label {...props} />
 )
 
+Default.storyName = 'Label'
+
 Default.args = {
   text: 'Email'
 }

@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import InputBox, { InputBoxProps } from './InputBox'
 
 export default {
-  title: 'Components/Input/InputBox',
+  title: 'Components/Input',
   component: InputBox,
   argTypes: {}
 } as ComponentMeta<typeof InputBox>
@@ -18,5 +18,7 @@ export const Default: ComponentStory<typeof InputBox> = (
     <InputBox.HintText text='This is a hint text to help user.' />
   </InputBox>
 )
+
+Default.storyName = 'InputBox'
 
 Default.args = {}

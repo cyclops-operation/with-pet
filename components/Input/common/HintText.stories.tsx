@@ -13,6 +13,8 @@ export const Default: ComponentStory<typeof HintText> = (
   props: HintTextProps
 ) => <HintText {...props} />
 
+Default.storyName = 'HintText'
+
 Default.args = {
   text: 'This is a hint text to help user.'
 }
