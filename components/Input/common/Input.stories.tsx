@@ -17,6 +17,15 @@ Default.args = {
   placeholder: 'olivia@untitledui.com'
 }
 
+export const Focus: ComponentStory<typeof Input> = (props: InputProps) => (
+  <Input {...props} />
+)
+
+Focus.args = {
+  autoFocus: true,
+  placeholder: 'olivia@untitledui.com'
+}
+
 export const Disabled: ComponentStory<typeof Input> = (props: InputProps) => (
   <Input {...props} />
 )
