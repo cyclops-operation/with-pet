@@ -1,7 +1,8 @@
 import { createContext, ReactNode, useContext, useMemo } from 'react'
 
+import HintText from './common/HintText'
 import Input, { InputProps } from './common/Input'
-import Label, { LabelProps } from './common/Label'
+import Label from './common/Label'
 
 export interface InputBoxProps {
   children: ReactNode
@@ -30,8 +31,6 @@ const InputBoxText = (props: InputProps) => {
   return <Input onChange={onChange} {...props} />
 }
 
-const InputBoxLabel = (props: LabelProps) => <Label {...props} />
-
 const InputBox = ({ children, className = '', onChange }: InputBoxProps) => {
   const value = useMemo(() => ({ onChange }), [])
   return (
@@ -42,6 +41,7 @@ const InputBox = ({ children, className = '', onChange }: InputBoxProps) => {
 }
 
 InputBox.Text = InputBoxText
-InputBox.Label = InputBoxLabel
+InputBox.Label = Label
+InputBox.HintText = HintText
 
 export default InputBox

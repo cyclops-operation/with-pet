@@ -1,11 +1,23 @@
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactElement, ReactNode } from 'react'
 
-export interface HintTextProps extends HTMLParagraphElement {
+import { twMerge } from 'tailwind-merge'
+
+export interface HintTextProps extends HTMLAttributes<HTMLParagraphElement> {
   text?: ReactNode
+  className?: string
 }
 
-const HintText = ({ text = '' }: HintTextProps) => {
-  return typeof text === 'string' ? <p>{text}</p> : text
+const defaultStyles =
+  'cursor-default select-none text-[14px] text-zinc-500 leading-[17px]'
+
+const HintText = ({ text = '', className = '', ...rest }: HintTextProps) => {
+  return typeof text === 'string' ? (
+    <p className={twMerge(defaultStyles, className)} {...rest}>
+      {text}
+    </p>
+  ) : (
+    (text as ReactElement)
+  )
 }
 
 export default HintText

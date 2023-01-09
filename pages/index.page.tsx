@@ -1,4 +1,5 @@
 import Button from '~/components/Button'
+import InputHintText from '~/components/Input/common/HintText'
 import InputBox from '~/components/Input/InputBox'
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
             <span className='h-[20px] w-[20px] rounded-full bg-red-700' />
           }
         />
+        <InputBox.HintText text='텍스트' />
       </InputBox>
       <InputBox className='flex max-w-[320px] flex-col gap-2'>
         <InputBox.Label text='라벨-3' htmlFor='input-3' />

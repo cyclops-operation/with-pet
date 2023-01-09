@@ -7,9 +7,10 @@ export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
   text?: ReactNode
 }
 
+const defaultStyles = 'cursor-pointer select-none'
+
 const Label = forwardRef<HTMLLabelElement, LabelProps>(
   ({ htmlFor, text, testId = 'label', className = '', ...rest }, ref) => {
-    const defaultStyles = 'cursor-pointer select-none'
     return (
       <label
         className={twMerge(defaultStyles, className)}
