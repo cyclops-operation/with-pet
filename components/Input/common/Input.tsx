@@ -1,17 +1,7 @@
 import { forwardRef, InputHTMLAttributes, ReactNode, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
-import {
-  borders,
-  classnames,
-  display,
-  filter,
-  height,
-  inset,
-  padding,
-  position,
-  width
-} from 'tailwindcss-classnames'
+import { classnames, padding } from 'tailwindcss-classnames'
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   testId?: string
@@ -20,10 +10,11 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const defaultStyle =
-  'inline-block rounded-lg border border-zinc-300 w-full h-full'
+  'inline-block rounded-lg border border-zinc-300 w-full h-full text-zinc-900 outline-none focus:border-sky-300 focus:ring-4 focus:ring-sky-100 focus:filter-none drop-shadow-default'
 
 const leftIconStyles =
   'flex justify-center items-center w-[20px] h-[20px] absolute left-2.5 top-[50%] translate-y-[-50%] select-none z-10'
+
 const rightIconStyles = twMerge(leftIconStyles, 'left-auto', 'right-2.5')
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -59,11 +50,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       <div className='relative'>
         {leftIcon && <i className={leftIconStyles}>{leftIcon}</i>}
         <input
-          className={twMerge(
-            defaultStyle,
-            paddingStyles,
-            'drop-shadow-default'
-          )}
+          className={twMerge(defaultStyle, paddingStyles)}
           ref={ref}
           id={id}
           name={name}

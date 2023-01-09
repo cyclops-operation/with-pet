@@ -9,6 +9,7 @@ export default function Home() {
         <InputBox.Label text='라벨-1' htmlFor='input-1' />
         <InputBox.Text
           id='input-1'
+          placeholder='asdkjasdk'
           leftIcon={
             <span className='h-[20px] w-[20px] rounded-full bg-red-700' />
           }
@@ -18,6 +19,7 @@ export default function Home() {
         <InputBox.Label text='라벨-2' htmlFor='input-2' />
         <InputBox.Text
           id='input-2'
+          placeholder='asdkjasdk'
           rightIcon={
             <span className='h-[20px] w-[20px] rounded-full bg-red-700' />
           }
@@ -27,6 +29,7 @@ export default function Home() {
         <InputBox.Label text='라벨-3' htmlFor='input-3' />
         <InputBox.Text
           id='input-3'
+          placeholder='asdkjasdk'
           leftIcon={
             <span className='h-[20px] w-[20px] rounded-full bg-red-700' />
           }
