@@ -22,7 +22,6 @@ export interface InputBoxProps {
 }
 
 export interface InputBoxContextType {
-  inputRef: RefObject<HTMLInputElement>
   onChange: InputProps['onChange']
   valid: boolean
 }
@@ -40,8 +39,8 @@ const useInputBoxContext = () => {
 }
 
 const InputBoxText = (props: InputProps) => {
-  const { onChange, inputRef } = useInputBoxContext() as InputBoxContextType
-  return <Input ref={inputRef} onChange={onChange} {...props} />
+  const { onChange } = useInputBoxContext() as InputBoxContextType
+  return <Input onChange={onChange} {...props} />
 }
 
 const InputBoxHintText = (props: HintTextProps) => {
@@ -50,10 +49,10 @@ const InputBoxHintText = (props: HintTextProps) => {
 }
 
 const InputBox = ({
-  children,
   className = '',
-  onChange,
-  isInvalid = false
+  isInvalid = false,
+  children,
+  onChange
 }: InputBoxProps) => {
   const inputRef = useRef<HTMLInputElement>(null)
   const [valid, setValid] = useState(isInvalid)
