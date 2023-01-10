@@ -13,8 +13,15 @@ export const Default: ComponentStory<typeof HintText> = (
   props: HintTextProps
 ) => <HintText {...props} />
 
-Default.storyName = 'HintText'
-
 Default.args = {
   text: 'This is a hint text to help user.'
+}
+
+export const Invalid: ComponentStory<typeof HintText> = (
+  props: HintTextProps
+) => <HintText {...props} />
+
+Invalid.args = {
+  isInvalid: true,
+  text: 'This is an error message.'
 }

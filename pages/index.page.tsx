@@ -19,6 +19,7 @@ export default function Home() {
       <InputBox className='flex max-w-[320px] flex-col gap-2'>
         <InputBox.Label text='라벨-2' htmlFor='input-2' />
         <InputBox.Text
+          pattern='[A-Za-z0-9]{4,10}'
           id='input-2'
           placeholder='asdkjasdk'
           rightIcon={
