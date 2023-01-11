@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import Input, { InputProps } from './Input'
+import Input, { InputProps } from './input'
 
 export default {
   title: 'Components/Input/common/Text',

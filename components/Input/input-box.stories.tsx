@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import InputBox, { InputBoxProps } from './InputBox'
+import InputBox, { InputBoxProps } from './input-box'
 
 export default {
   title: 'Components/Input',

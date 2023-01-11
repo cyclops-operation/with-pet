@@ -2,7 +2,6 @@ import {
   ChangeEvent,
   createContext,
   ReactNode,
-  RefObject,
   useCallback,
   useContext,
   useMemo,
@@ -10,9 +9,9 @@ import {
   useState
 } from 'react'
 
-import HintText, { HintTextProps } from './common/HintText'
-import Input, { InputProps } from './common/Input'
-import Label from './common/Label'
+import HintText, { HintTextProps } from './common/hint-text'
+import Input, { InputProps } from './common/input'
+import Label from './common/label'
 
 export interface InputBoxProps {
   children: ReactNode

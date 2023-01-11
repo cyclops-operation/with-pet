@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import Label, { LabelProps } from './Label'
+import Label, { LabelProps } from './label'
 
 export default {
   title: 'Components/Input/common/Label',

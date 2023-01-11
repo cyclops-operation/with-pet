@@ -1,6 +1,6 @@
 import Button from '~/components/Button'
-import InputHintText from '~/components/Input/common/HintText'
-import InputBox from '~/components/Input/InputBox'
+import InputHintText from '~/components/Input/common/hint-text'
+import InputBox from '~/components/Input/input-box'
 
 export default function Home() {
   return (

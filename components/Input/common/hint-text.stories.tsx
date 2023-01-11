@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import HintText, { HintTextProps } from './HintText'
+import HintText, { HintTextProps } from './hint-text'
 
 export default {
   title: 'Components/Input/common/HintText',
