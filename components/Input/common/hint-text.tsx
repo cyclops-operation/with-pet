@@ -1,7 +1,6 @@
 import { HTMLAttributes, ReactElement, ReactNode, useMemo } from 'react'
 
 import { twMerge } from 'tailwind-merge'
-import { classnames, textColor } from 'tailwindcss-classnames'
 
 export interface HintTextProps extends HTMLAttributes<HTMLParagraphElement> {
   text?: ReactNode
@@ -20,7 +19,7 @@ const HintText = ({
 }: HintTextProps) => {
   const validStyles = useMemo(() => {
     if (isInvalid) {
-      return twMerge(defaultStyles, classnames(textColor('text-red-500')))
+      return twMerge(defaultStyles, 'text-red-500')
     }
     return ''
   }, [isInvalid])
