@@ -8,7 +8,7 @@ export default function Home() {
       <Button color='secondary'>Button CTA</Button>
       <InputBox className='flex max-w-[320px] flex-col gap-2'>
         <InputBox.Label text='라벨-1' htmlFor='input-1' />
-        <InputBox.Text
+        <InputBox.Input
           id='input-1'
           placeholder='asdkjasdk'
           leftIcon={
@@ -18,7 +18,7 @@ export default function Home() {
       </InputBox>
       <InputBox className='flex max-w-[320px] flex-col gap-2'>
         <InputBox.Label text='라벨-2' htmlFor='input-2' />
-        <InputBox.Text
+        <InputBox.Input
           pattern='[A-Za-z0-9]{4,10}'
           id='input-2'
           placeholder='asdkjasdk'
@@ -30,7 +30,7 @@ export default function Home() {
       </InputBox>
       <InputBox className='flex max-w-[320px] flex-col gap-2'>
         <InputBox.Label text='라벨-3' htmlFor='input-3' />
-        <InputBox.Text
+        <InputBox.Input
           id='input-3'
           placeholder='asdkjasdk'
           leftIcon={

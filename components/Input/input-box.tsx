@@ -53,7 +53,6 @@ const InputBox = ({
   children,
   onChange
 }: InputBoxProps) => {
-  const inputRef = useRef<HTMLInputElement>(null)
   const [valid, setValid] = useState(isInvalid)
 
   const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -64,10 +63,7 @@ const InputBox = ({
     setValid(!valid)
   }, [])
 
-  const value = useMemo(
-    () => ({ onChange: handleChange, inputRef, valid }),
-    [inputRef, valid]
-  )
+  const value = useMemo(() => ({ onChange: handleChange, valid }), [valid])
 
   return (
     <InputBoxContext.Provider value={value}>
@@ -76,7 +72,7 @@ const InputBox = ({
   )
 }
 
-InputBox.Text = InputBoxText
+InputBox.Input = InputBoxText
 InputBox.Label = Label
 InputBox.HintText = InputBoxHintText
 

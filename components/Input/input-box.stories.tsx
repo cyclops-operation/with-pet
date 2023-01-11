@@ -14,7 +14,7 @@ const emailPattern = '[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.]+[a-zA-Z]+[.]*[a-zA-Z]*'
 export const Default: ComponentStory<typeof InputBox> = () => (
   <InputBox className='flex max-w-[320px] flex-col gap-2'>
     <InputBox.Label text='Email' htmlFor='input-2' />
-    <InputBox.Text id='input-2' placeholder='olivia@untitledui.com' />
+    <InputBox.Input id='input-2' placeholder='olivia@untitledui.com' />
     <InputBox.HintText text='This is a hint text to help user.' />
   </InputBox>
 )
@@ -22,7 +22,7 @@ export const Default: ComponentStory<typeof InputBox> = () => (
 export const Invalid: ComponentStory<typeof InputBox> = () => (
   <InputBox className='flex max-w-[320px] flex-col gap-2'>
     <InputBox.Label text='Email' htmlFor='input-2' />
-    <InputBox.Text id='input-2' placeholder='olivia@untitledui.com' required />
+    <InputBox.Input id='input-2' placeholder='olivia@untitledui.com' required />
     <InputBox.HintText isInvalid text='This is a hint text to help user.' />
   </InputBox>
 )
@@ -30,7 +30,7 @@ export const Invalid: ComponentStory<typeof InputBox> = () => (
 export const InvalidFocus: ComponentStory<typeof InputBox> = () => (
   <InputBox className='flex max-w-[320px] flex-col gap-2'>
     <InputBox.Label text='Email' htmlFor='input-2' />
-    <InputBox.Text
+    <InputBox.Input
       id='input-2'
       placeholder='olivia@untitledui.com'
       autoFocus
