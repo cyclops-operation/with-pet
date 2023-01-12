@@ -1,6 +1,6 @@
-# With Pet 🐕🐩
+# With Pet 🐶😸
 
-유기 동뮬 찾기 서비스
+<h3 align='center'>🐕 당신의 가족을 위드펫을 통해 찾아보세요 🐩<h3>
 
 ## Initial settings
 
@@ -12,9 +12,9 @@
 - [x] Issue & PR Templates
 - [x] Darkmode (`next-themes`)
 - [x] Husky
-- [ ] Cypress
 
 ## Additional
 
 - [ ] Zustand
 - [ ] Auto update CHANGELOG(`release-please`)
+- [ ] Cypress
