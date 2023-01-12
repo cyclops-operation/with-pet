@@ -27,6 +27,7 @@
       "~/lib/*": ["lib/*"],
       "~/utils/*": ["utils/*"],
       "~/common/*": ["common/*"],
+      "~/hooks/*": ["hooks/*"],
       "tailwindcss-classnames": ["common/custom-styles.ts"]
     }
   },
