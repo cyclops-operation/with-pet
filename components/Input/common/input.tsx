@@ -71,7 +71,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       <div className='relative'>
         {leftIcon && <i className={leftIconStyles}>{leftIcon}</i>}
         <input
-          className={twMerge(defaultStyle, paddingStyles)}
+          className={twMerge(defaultStyle, paddingStyles, className)}
           ref={ref}
           id={id}
           name={name}

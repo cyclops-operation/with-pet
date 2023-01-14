@@ -1,6 +1,7 @@
 import {
   ChangeEvent,
   createContext,
+  HTMLAttributes,
   ReactNode,
   useCallback,
   useContext,
@@ -13,7 +14,7 @@ import HintText, { HintTextProps } from './common/hint-text'
 import Input, { InputProps } from './common/input'
 import Label from './common/label'
 
-export interface InputBoxProps {
+export interface InputBoxProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode
   className?: string
   onChange?: InputProps['onChange']
@@ -51,7 +52,8 @@ const InputBox = ({
   className = '',
   isInvalid = false,
   children,
-  onChange
+  onChange,
+  ...rest
 }: InputBoxProps) => {
   const [valid, setValid] = useState(isInvalid)
 
@@ -67,7 +69,9 @@ const InputBox = ({
 
   return (
     <InputBoxContext.Provider value={value}>
-      <div className={className}>{children}</div>
+      <div className={className} {...rest}>
+        {children}
+      </div>
     </InputBoxContext.Provider>
   )
 }
