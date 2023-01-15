@@ -22,6 +22,7 @@ const defaultStyles = `
     overflow-hidden
     transition-all
     duration-500
+    ease
 `
 
 const triggerStyles = `
@@ -43,7 +44,9 @@ const iconStyles = `
     text-gray-700
     rotate-[180deg]
     transition-all
-    duration-500
+    duration-700
+    delay-100
+    ease
 `
 
 const Accordion = ({
@@ -62,7 +65,7 @@ const Accordion = ({
 
   const arrowStyles = useMemo(() => {
     if (isExtend) {
-      return twMerge(iconStyles, 'rotate-0')
+      return twMerge(iconStyles, 'rotate-0 delay-0')
     }
     return iconStyles
   }, [isExtend])
