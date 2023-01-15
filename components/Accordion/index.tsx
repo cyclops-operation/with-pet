@@ -1,5 +1,5 @@
 import { HTMLAttributes, ReactNode, useMemo, useState } from 'react'
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
+import { ChevronUpIcon } from '@heroicons/react/24/outline'
 
 import { twMerge } from 'tailwind-merge'
 
