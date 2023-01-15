@@ -6,14 +6,7 @@ import Accordion, { AccordionProps } from '.'
 export default {
   title: 'Components/Accordion',
   component: Accordion,
-  argTypes: {
-    color: {
-      control: { type: 'select' }
-    },
-    size: {
-      control: { type: 'select' }
-    }
-  }
+  argTypes: {}
 } as ComponentMeta<typeof Accordion>
 
 export const Default: ComponentStory<typeof Accordion> = (
