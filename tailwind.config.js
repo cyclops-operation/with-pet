@@ -37,7 +37,9 @@ module.exports = {
   },
   plugins: [
     plugin(function ({ addVariant }) {
-      addVariant('not-first', '&:not(:first-of-type)')
+      addVariant('input-group-invalid', '&:has(input:invalid)'),
+        addVariant('input-group-invalid-focus', '&:has(input:invalid:focus)'),
+        addVariant('input-group-focus', '&:has(input:focus)')
     })
   ]
 }
