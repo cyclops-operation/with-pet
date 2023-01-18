@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['page.tsx', 'api.ts'],
+  compiler: {
+    emotion: true
+  },
   async redirects() {
     return [
       {
