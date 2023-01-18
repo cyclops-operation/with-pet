@@ -1,7 +1,8 @@
+import { defaultColors } from './colors/default'
 import { zinc } from './colors/zinc'
 
 const lightTheme = {
-  colors: { ...zinc },
+  colors: { ...defaultColors, ...zinc },
   shadow: {
     sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
     md: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
