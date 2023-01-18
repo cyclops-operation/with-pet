@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components'
 
 const buttonGroupFadeIn = keyframes`
   0% {
-    opacity: 1;
+    opacity: 0;
   }
   50% {
     opacity: 0;

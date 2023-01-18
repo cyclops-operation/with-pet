@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 import { Color, Size, Width } from './enums'
 import { ValueOf } from './type-utils'
 
@@ -11,9 +13,11 @@ export type CommonColor = ValueOf<typeof Color>
 
 export type CommonSize = ValueOf<typeof Size>
 
+export type CommonLabel = string | number
+
 export type CommonValue = string | number | boolean
 
 export interface Option {
-  label: string | number
+  label: CommonLabel
   value: CommonValue
 }
