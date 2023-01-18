@@ -1,5 +1,8 @@
 import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'next-themes'
+import { Global, ThemeProvider } from '@emotion/react'
+
+import { global } from '~/styles/global'
+import theme from '~/styles/theme'
 
 import Layout from './src/ui/Layout'
 
@@ -7,10 +10,13 @@ import '../styles/globals.css'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute='class'>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+    <>
+      <Global styles={global} />
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </>
   )
 }
