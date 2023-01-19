@@ -1,4 +1,4 @@
-import { CSSObject } from '@emotion/react'
+import { CSSObject } from 'styled-components'
 
 import { fonts } from './default'
 import lightTheme from './light-theme'

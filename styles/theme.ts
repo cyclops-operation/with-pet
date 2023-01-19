@@ -1,9 +1,7 @@
-import { Theme } from '@emotion/react'
-
 import { figure, fonts } from './default'
 import lightTheme from './light-theme'
 
-const theme: Theme = {
+const theme = {
   figure,
   ...lightTheme,
   fonts
