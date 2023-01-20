@@ -1,28 +1,23 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 
-import { twMerge } from 'tailwind-merge'
-
 import { InputProps } from '~/components/Input/common/input'
 import InputBox from '~/components/Input/input-box'
 
-import useSelect from '../use-select'
+import useSelect from '../../use-select'
 
-const triggerDefaultStyle = `
-  text-start
-`
+import { TriggerInput } from './index.style'
 
 const triggerDirectionStyle = `
   w-3
   h-3
 `
 
-const Trigger = ({ className, ...rest }: InputProps) => {
+const Trigger = (props: InputProps) => {
   const { open, setOpen } = useSelect()
 
   return (
     <InputBox>
-      <InputBox.Input
-        className={twMerge(triggerDefaultStyle, className)}
+      <TriggerInput
         rightIcon={
           open ? (
             <ChevronUpIcon className={triggerDirectionStyle} />
@@ -31,7 +26,7 @@ const Trigger = ({ className, ...rest }: InputProps) => {
           )
         }
         onClick={() => setOpen(true)}
-        {...rest}
+        {...props}
       />
     </InputBox>
   )
