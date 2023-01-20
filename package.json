@@ -10,7 +10,6 @@
     "tscheck": "tsc --project ./tsconfig.json --noEmit",
     "lint-staged": "lint-staged",
     "prepare": "husky install",
-    "generate-css-types": "tailwindcss-classnames -i tailwind.config.js -o common/custom-styles.ts",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
