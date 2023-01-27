@@ -1,26 +1,24 @@
 import { forwardRef, LabelHTMLAttributes, ReactNode } from 'react'
 
-import { twMerge } from 'tailwind-merge'
+import { LabelWrapper } from './index.style'
 
 export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
   testId?: string
   text?: ReactNode
 }
 
-const defaultStyles = 'cursor-pointer select-none'
-
 const Label = forwardRef<HTMLLabelElement, LabelProps>(
   ({ htmlFor, text, testId = 'label', className = '', ...rest }, ref) => {
     return (
-      <label
-        className={twMerge(defaultStyles, className)}
+      <LabelWrapper
+        className={className}
         ref={ref}
         htmlFor={htmlFor}
         data-cy={testId}
         {...rest}
       >
         {text}
-      </label>
+      </LabelWrapper>
     )
   }
 )
