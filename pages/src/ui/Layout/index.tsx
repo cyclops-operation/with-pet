@@ -1,10 +1,12 @@
 import { HTMLAttributes } from 'react'
 
+import { ContentWrapper, LayoutWrapper } from './index.style'
+
 const Layout = ({ children }: HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div className='flex justify-center'>
-      <main className='w-[428px]'>{children}</main>
-    </div>
+    <LayoutWrapper>
+      <ContentWrapper>{children}</ContentWrapper>
+    </LayoutWrapper>
   )
 }
 

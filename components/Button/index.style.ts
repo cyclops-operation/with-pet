@@ -13,7 +13,7 @@ const widthVariant: StyleRecord<ButtonProps['width']> = {
   `
 }
 
-const sizeVariant = {
+const sizeVariant: StyleRecord<ButtonProps['size']> = {
   sm: css`
     padding: ${({ theme }) => theme.figure}px
       ${({ theme }) => (theme.figure / 4) * 7}px;
@@ -40,7 +40,7 @@ const sizeVariant = {
   `
 }
 
-const colorVariant = {
+const colorVariant: StyleRecord<ButtonProps['color']> = {
   primary: css`
     border: 1px solid ${({ theme }) => theme.colors.zinc_900};
     color: ${({ theme }) => theme.colors.white};

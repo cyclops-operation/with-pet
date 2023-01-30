@@ -1,34 +1,25 @@
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
-
-import { InputProps } from '~/components/Input/common/input'
-import InputBox from '~/components/Input/input-box'
+import { ButtonProps } from '~/components/Button'
+import Icon from '~/components/icon'
 
 import useSelect from '../../use-select'
 
-import { TriggerInput } from './index.style'
+import { TriggerValue, TriggerWrapper } from './index.style'
 
-const triggerDirectionStyle = `
-  w-3
-  h-3
-`
+export type SelectTriggerProps = ButtonProps
 
-const Trigger = (props: InputProps) => {
-  const { open, setOpen } = useSelect()
+const Trigger = ({ type, children, ...rest }: SelectTriggerProps) => {
+  const { open, setOpen, selected } = useSelect()
 
   return (
-    <InputBox>
-      <TriggerInput
-        rightIcon={
-          open ? (
-            <ChevronUpIcon className={triggerDirectionStyle} />
-          ) : (
-            <ChevronDownIcon className={triggerDirectionStyle} />
-          )
-        }
-        onClick={() => setOpen(true)}
-        {...props}
-      />
-    </InputBox>
+    <TriggerWrapper
+      width='fill'
+      color='secondary'
+      onClick={() => setOpen(true)}
+      {...rest}
+    >
+      <TriggerValue>{selected?.label}</TriggerValue>
+      <Icon size={20} iconName={open ? 'expand_less' : 'expand_more'} />
+    </TriggerWrapper>
   )
 }
 

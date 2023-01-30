@@ -11,10 +11,7 @@ export default {
 
 export const Default: ComponentStory<typeof Select> = (props: SelectProps) => (
   <Select {...props}>
-    <Select.Trigger
-      placeholder='Choose your pet'
-      leftIcon={<MagnifyingGlassIcon className='h-4 w-4 text-zinc-500' />}
-    />
+    <Select.Trigger placeholder='Choose your pet' />
     <Select.Menu className='absolute top-12 w-full'>
       <Select.Option value='option-1'>Korean short hair</Select.Option>
       <Select.Option value='option-2'>British short hair</Select.Option>

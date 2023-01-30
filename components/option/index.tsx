@@ -1,5 +1,6 @@
 import { HTMLAttributes } from 'react'
-import { CheckIcon } from '@heroicons/react/24/outline'
+
+import Icon from '~/components/icon'
 
 import { OptionWrapper } from './index.style'
 
@@ -10,7 +11,7 @@ export interface OptionProps extends HTMLAttributes<HTMLLIElement> {
 const Option = ({ children, isSelected, ...rest }: OptionProps) => (
   <OptionWrapper isSelected={isSelected} {...rest}>
     {children}
-    {isSelected ? <CheckIcon className='h-3 w-3' /> : null}
+    {isSelected ? <Icon size={20} iconName='check' /> : null}
   </OptionWrapper>
 )
 
