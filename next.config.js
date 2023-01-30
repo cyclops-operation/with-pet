@@ -13,7 +13,9 @@ const API_DOMAIN = {
 
 const API_ENCODE_KEY = process.env.API_ENCODE_KEY
 const API_DECODE_KEY = process.env.API_DECODE_KEY
+const IMAGE_BASE_URL = process.env.IMAGE_BASE_URL
 
+const IMAGE_DOMAINS = [IMAGE_BASE_URL]
 /**
  * https://nextjs.org/docs/api-reference/next.config.js/ignoring-typescript-errors
  * 빌드시 typescript 무시
@@ -32,6 +34,9 @@ const nextConfig = {
     API_DOMAIN,
     API_ENCODE_KEY,
     API_DECODE_KEY
+  },
+  images: {
+    domains: IMAGE_DOMAINS
   },
   compiler: {
     styledComponents: true
