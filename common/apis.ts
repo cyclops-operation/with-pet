@@ -53,4 +53,4 @@ const apiInstance = axios.create({
   baseURL: API_DOMAIN
 })
 
-export const API = generatorAxiosInstance(apiInstance)
+export const api = generatorAxiosInstance(apiInstance)
