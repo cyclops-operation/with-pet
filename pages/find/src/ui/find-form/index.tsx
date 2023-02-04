@@ -14,11 +14,7 @@ import Radio from '~/components/Radio'
 import { GetFindPetsParams } from '~/interfaces/find/find-params.type'
 import { staleTimes } from '~/lib/config/react-query'
 import { ROUTER } from '~/lib/config/router'
-import {
-  FIND_LIVESTOCK_LIST,
-  FIND_NEUTERED_LIST,
-  PET_CODE
-} from '~/lib/domain/find'
+import { FIND_LIVESTOCK_LIST, PET_CODE } from '~/lib/domain/find'
 
 import FormCombobox from '../modules/form-combobox'
 
@@ -123,21 +119,18 @@ const FindForm = () => {
   }, [districtData])
 
   const shelterOptions = useMemo(() => {
-    if (!shelterData) {
-      return []
-    }
     const isValidShelter = Boolean(
       shelterData?.response.body.items.item?.length
     )
-    if (isValidShelter) {
-      return shelterData.response.body.items.item.map(
-        ({ careRegNo, careNm }) => ({
-          label: careNm,
-          value: careRegNo
-        })
-      )
+    if (!shelterData || !isValidShelter) {
+      return []
     }
-    return []
+    return shelterData.response.body.items.item.map(
+      ({ careRegNo, careNm }) => ({
+        label: careNm,
+        value: careRegNo
+      })
+    )
   }, [shelterData])
 
   const selectQuery = (key: keyof FindFormQuery, value: CommonValue) => {
