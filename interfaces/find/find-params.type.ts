@@ -1,7 +1,6 @@
 /**
  * Base
  */
-
 import { PublicResponse } from '~/common/types'
 
 interface Kind {
@@ -77,3 +76,13 @@ export type GetSheltersResponse = PublicResponse<{
     item: Shelter[]
   }
 }>
+
+export interface GetFindPetsParams {
+  bgnde: string
+  endde: string
+  upkind: number
+  kind: string
+  upr_cd: number | null
+  org_cd: number | null
+  care_reg_no: number | null
+}
