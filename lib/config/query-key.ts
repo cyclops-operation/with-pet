@@ -6,5 +6,8 @@ export const queryKeys = {
     GET_CITIES: 'getCities',
     GET_DISTRICTS: 'getDistricts',
     GET_SHELTERS: 'getShelters'
+  },
+  FIND: {
+    GET_FIND_PETS_RESULT: 'getFindPetsResult'
   }
 }

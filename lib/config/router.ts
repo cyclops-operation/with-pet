@@ -1,5 +1,6 @@
 export const ROUTER = {
   main: '/',
   find: '/find',
-  regist: '/regist'
+  regist: '/regist',
+  findResult: '/find/result'
 }

@@ -1,4 +1,4 @@
-import { AxiosResponse } from 'axios'
+import axios, { Axios, AxiosResponse } from 'axios'
 
 import { api } from '~/common/apis'
 import { API_ENCODE_KEY } from '~/common/env'
@@ -8,11 +8,16 @@ import {
   GetCitiesResponse,
   GetDistrictsParams,
   GetDistrictsResponse,
+  GetFindPetsParams,
   GetKindsParams,
   GetKindsResponse,
   GetSheltersParams,
   GetSheltersResponse
-} from '~/interfaces/axios'
+} from '~/interfaces/find/find-params.type'
+import {
+  GetFindPetsResponse,
+  GetFindPetsResult
+} from '~/interfaces/find/find-result.type'
 
 const Api = {
   Pet: {
@@ -47,6 +52,25 @@ const Api = {
       )
 
       return data
+    }
+  },
+  Find: {
+    getFindResult: async ({
+      bgnde,
+      endde,
+      upkind,
+      kind,
+      upr_cd,
+      org_cd,
+      care_reg_no
+    }: GetFindPetsParams) => {
+      const {
+        data: { response }
+      } = await api.get<GetFindPetsResponse>(
+        `/abandonmentPublic?serviceKey=${API_ENCODE_KEY}&bgnde=${bgnde}&endde=${endde}&upkind=${upkind}&kind=${kind}&upr_cd=${upr_cd}&org_cd=${org_cd}&care_reg_no=${care_reg_no}&_type=json`
+      )
+      const { item } = response.body.items
+      return GetFindPetsResult.parse(item)
     }
   }
 }

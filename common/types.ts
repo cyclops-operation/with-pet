@@ -1,5 +1,3 @@
-import { ReactNode } from 'react'
-
 import { Color, Size, Width } from './enums'
 import { ValueOf } from './type-utils'
 

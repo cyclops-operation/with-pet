@@ -4,11 +4,13 @@ import {
   GetCitiesResponse,
   GetDistrictsParams,
   GetDistrictsResponse,
+  GetFindPetsParams,
   GetKindsParams,
   GetKindsResponse,
   GetSheltersParams,
   GetSheltersResponse
-} from '~/interfaces/axios'
+} from '~/interfaces/find/find-params.type'
+import { GetFindPetsResult } from '~/interfaces/find/find-result.type'
 import { queryKeys } from '~/lib/config/query-key'
 
 import Api from './axios'
@@ -54,6 +56,17 @@ export const useGetSheltersQuery = ({
   return useQuery<GetSheltersResponse>(
     [queryKeys.LOCATION.GET_SHELTERS, params],
     () => Api.Location.getShelters(params),
+    options
+  )
+}
+
+export const useGetFindResultQuery = ({
+  params,
+  options
+}: UseQueryParams<GetFindPetsParams, GetFindPetsResult>) => {
+  return useQuery<GetFindPetsResult>(
+    [queryKeys.FIND.GET_FIND_PETS_RESULT],
+    () => Api.Find.getFindResult(params),
     options
   )
 }
