@@ -5,14 +5,13 @@ import { CommonSize } from '~/common/types'
 import { RadioWrapper } from './index.style'
 
 export interface RadioProps extends HTMLAttributes<HTMLInputElement> {
-  value: string | number | boolean
   checked?: boolean
   size?: Exclude<CommonSize, 'md' | 'lg' | 'xl'>
 }
 
 const Radio = forwardRef(
   (
-    { children, id, value, size = 'xs', checked, ...rest }: RadioProps,
+    { children, id, size = 'xs', checked, ...rest }: RadioProps,
     ref: ForwardedRef<HTMLLabelElement>
   ) => {
     return (

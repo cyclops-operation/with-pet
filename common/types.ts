@@ -21,3 +21,14 @@ export interface Option {
   label: CommonLabel
   value: CommonValue
 }
+
+export type PublicResponse<R = unknown> = {
+  response: {
+    body: R
+    header: {
+      reqNo: number
+      resultCode: string
+      resultMsg: string
+    }
+  }
+}

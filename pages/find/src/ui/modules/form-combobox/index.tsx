@@ -8,11 +8,13 @@ import { FormComboboxMenu } from './index.style'
 interface FormComboboxProps extends Partial<ComboboxProps> {
   options: Option[]
   placeholder?: string
+  disabled?: boolean
 }
 
 const FormCombobox = ({
   placeholder,
   options,
+  disabled = false,
   onSelect
 }: FormComboboxProps) => {
   const [inputValue, setInputValue] = useState('')
@@ -40,6 +42,7 @@ const FormCombobox = ({
       <Combobox.Trigger
         placeholder={placeholder}
         value={inputValue}
+        disabled={disabled}
         onChange={changeInput}
       />
       {filteredOptions.length > 0 && (

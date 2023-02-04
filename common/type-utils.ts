@@ -1,4 +1,5 @@
-import { UseQueryOptions } from 'react-query'
+import { AxiosResponse } from 'axios'
+import { QueryKey, UseQueryOptions, UseQueryResult } from 'react-query'
 import { css } from 'styled-components'
 
 export type ValueOf<T> = T[keyof T]
@@ -11,11 +12,11 @@ export type StyleRecord<T extends string | number | undefined> = Record<
 export type OptionalStyleRecord<T extends string | number | undefined> =
   Partial<StyleRecord<T>>
 
-export type UseQueryParams<P> = {
+export type UseQueryParams<P, R> = {
   params: P
   options?:
     | Omit<
-        UseQueryOptions<unknown, unknown, unknown, (string | P)[]>,
+        UseQueryOptions<unknown, unknown, AxiosResponse<R>['data'], QueryKey>,
         'queryKey' | 'queryFn'
       >
     | undefined
