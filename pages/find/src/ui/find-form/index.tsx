@@ -8,10 +8,12 @@ import {
   useGetKindsQuery,
   useGetSheltersQuery
 } from '~/api/queries'
+import { UseQueryParams } from '~/common/type-utils'
 import { CommonValue } from '~/common/types'
 import Button from '~/components/Button'
 import Radio from '~/components/Radio'
 import { GetFindPetsParams } from '~/interfaces/find/find-params.type'
+import { GetFindPetsResult } from '~/interfaces/find/find-result.type'
 import { staleTimes } from '~/lib/config/react-query'
 import { ROUTER } from '~/lib/config/router'
 import { FIND_LIVESTOCK_LIST, PET_CODE } from '~/lib/domain/find'
@@ -137,7 +139,7 @@ const FindForm = () => {
     setQuery((prev) => ({ ...prev, [key]: value }))
   }
 
-  const findParams: { params: GetFindPetsParams; enabled: boolean } =
+  const findParams: UseQueryParams<GetFindPetsParams, GetFindPetsResult> =
     useMemo(() => {
       const isInvalid = Object.values(query).some(
         (inputValue) => !Boolean(inputValue)
@@ -153,14 +155,13 @@ const FindForm = () => {
           org_cd: district,
           care_reg_no: shelter
         },
-        enabled: !isInvalid
+        options: {
+          enabled: !isInvalid
+        }
       }
     }, [query])
 
-  const { data: findResult } = useGetFindResultQuery({
-    params: findParams.params,
-    options: { enabled: findParams.enabled }
-  })
+  const { data: findResult } = useGetFindResultQuery(findParams)
 
   return (
     <FindFormWrapper>
