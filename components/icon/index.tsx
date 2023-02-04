@@ -7,9 +7,9 @@ export interface IconProps extends HTMLAttributes<HTMLSpanElement> {
   iconName: string
 }
 
-const Icon = ({ iconName, ...rest }: IconProps) => {
+const Icon = ({ iconName, className, ...rest }: IconProps) => {
   return (
-    <IconWrapper className='material-symbols-outlined' {...rest}>
+    <IconWrapper className={`material-symbols-outlined ${className}`} {...rest}>
       {iconName}
     </IconWrapper>
   )
