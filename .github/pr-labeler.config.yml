@@ -1,0 +1,7 @@
+'Feature': ['feature/*', 'feat/*']
+'Refactor': 'refactor/*'
+'Documentation': ['doc/*', 'docs/*']
+'Bug': ['fix/*', 'fix*']
+'Hotfix': 'hotfix/*'
+'Config': ['setting/*', 'settings/*', 'config/*', 'configs/*']
+'Review needed': '*'
